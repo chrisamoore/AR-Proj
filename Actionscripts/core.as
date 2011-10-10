@@ -1,7 +1,9 @@
 package {
 	import flash.display.Sprite;
+	
+	import org.papervision3d.objects.primitives.Cube;
 	[SWF(width="640", height="480", framerate="30", backgroundColor="#ffffff")]
-	public class ARProj extends Sprite
+	public class ar extends Sprite
 	{
 		// Embed the marker.pat file 
 		[Embed(source="marker.pat", mimeType="application/octet-stream")]
@@ -84,7 +86,7 @@ package {
 				ar_bitmap = new BitmapFileMaterial("image.jpeg");
 				ar_bitmap.doubleSided = true; 
 				
-				ar_cube = new MaterialsList({all:ar_bitmap}), 80, 80, 80);
+				ar_cube = new Cube(new MaterialsList({all:ar_bitmap}), 80, 80, 80);
 				ar_scene.addChild(ar_baseNnode);
 				ar_basenode.addChild(ar_cube);
 				addChild(ar_viewport);	
